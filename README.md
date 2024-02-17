@@ -1,3 +1,57 @@
+# Azure DevOps Project Setup via Terraform
+
+Este projeto utiliza Terraform para automatizar a configuração de um projeto completo no Azure DevOps, incluindo a criação de repositórios, políticas de branches, ambientes, grupos e variáveis de ambiente.
+
+## Features
+
+- **Criação de Projeto**: Automatiza a criação de um novo projeto no Azure DevOps com o nome especificado (`Project-Name`).
+
+- **Configurações do Projeto**: Habilita ou desabilita funcionalidades específicas do projeto como Test Plans, Artifacts, Boards e Repositories.
+
+- **Repositórios**: Configura repositórios no projeto com diferentes inicializações, como importação de um repositório Git existente, criação de um novo repositório limpo com políticas específicas (tamanho de arquivo, padrões de caminho, etc.) e criação de um repositório não inicializado.
+
+- **Ambientes**: Define ambientes como `dev`, `qa` e `prd`, com configurações específicas para controle de branches permitidos e verificações de branch.
+
+- **Variáveis de Grupo**: Gerencia grupos de variáveis dentro do projeto, permitindo a definição de variáveis comuns e segredos que podem ser acessados pelos pipelines.
+
+- **Grupos Personalizados**: Suporta a criação de grupos personalizados dentro do projeto para diferentes equipes ou funções, como ConsultoriaC e ConsultoriaD.
+
+- **Políticas de Branch**: Estabelece políticas para a branch `develop`, incluindo linking de work items e tipos de merge permitidos.
+
+## Como Utilizar
+
+Para utilizar este módulo, é necessário ter o Terraform instalado e configurado para trabalhar com o Azure DevOps. Após clonar este repositório, você pode personalizar as variáveis no arquivo de configuração do Terraform conforme sua necessidade e então aplicar o Terraform para configurar seu projeto no Azure DevOps.
+
+```hcl
+module "az_devops_complete" {
+  source = "<caminho_para_o_modulo>"
+
+  // Configurações do projeto, repositórios, ambientes, variáveis de grupo, etc.
+}
+
+```
+Execute os seguintes comandos do Terraform:
+```hcl
+terraform init
+terraform plan
+terraform apply
+```
+
+
+Requisitos
+
+Terraform v0.12+
+
+Provedor AzureDevOps Terraform
+
+Contribuições
+Sinta-se à vontade para contribuir com melhorias ou correções neste módulo. Abra uma issue ou um pull request para discutir suas contribuições.
+
+
+Este Markdown fornece uma visão geral clara e estruturada do projeto, incluindo suas funcionalidades, instruções de uso, requisitos e um convite para contribuições, tudo formatado de maneira a facilitar a leitura e compreensão.
+
+
+
 ## Requirements
 
 | Name | Version |
