@@ -1,0 +1,22 @@
+# Arquivos e diretórios locais de configuração Terraform
+.terraform/
+
+# Estado do Terraform
+*.tfstate
+*.tfstate.backup
+*.tfplan
+
+# Logs e arquivos temporários
+*.log
+*.out
+*.backup
+*.bak
+*.swp
+*~
+
+# Arquivos de ambiente do Visual Studio Code
+.vscode/
+tf.vars
+
+.hcl
+modules/
